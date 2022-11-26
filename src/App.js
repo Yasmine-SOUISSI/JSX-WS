@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBar from "./Components/NavBar";
+import CardList from "./Sections/CardList";
+import ImgFromSrc from "./Assets/logo512.png";
 
 function App() {
+  const name = "from React ";
+  const handleConfirm = () => {
+     window.confirm("Are you sure?");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <h1>Hello {name}</h1>
+      <CardList />
+      <img src={ImgFromSrc} className="App-logo" alt="logo" />
+      <button onClick={handleConfirm}>Confirm</button>
+    </>
   );
 }
 
